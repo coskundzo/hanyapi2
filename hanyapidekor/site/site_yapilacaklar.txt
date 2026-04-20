@@ -1,0 +1,9 @@
+1 - youtube hesap,instagram hesap,facebook hesap,linkedin hesap,tiktok hesap
+
+2 - projeler kendi resimlerini ekle
+
+3 - yukarı butonu çalışmıyor
+
+4 - drowdown menü mobilde bozuk
+
+5 - ceo ayarları
