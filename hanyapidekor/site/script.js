@@ -29,6 +29,33 @@ function closeMenu() {
   if (navLinks) navLinks.classList.remove('open');
   if (hamburger) hamburger.classList.remove('active');
   if (navOverlay) navOverlay.classList.remove('active');
+  // Dropdown da kapat
+  const openDropdown = document.querySelector('.dropdown.open');
+  if (openDropdown) openDropdown.classList.remove('open');
+}
+
+// Mobil dropdown toggle - ÖNCE BU
+const dropdownBtn = document.querySelector('.dropdown .dropbtn');
+if (dropdownBtn) {
+  dropdownBtn.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      e.stopPropagation();
+      const dropdown = dropdownBtn.closest('.dropdown');
+      const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+      
+      dropdown.classList.toggle('open');
+      
+      const isOpen = dropdown.classList.contains('open');
+      console.log('=== DROPDOWN DEBUG ===');
+      console.log('Dropdown toggled:', isOpen);
+      console.log('Dropdown element:', dropdown);
+      console.log('Dropdown menu:', dropdownMenu);
+      console.log('Dropdown menu display:', window.getComputedStyle(dropdownMenu).display);
+      console.log('Dropdown menu height:', dropdownMenu.offsetHeight);
+      console.log('=====================');
+    }
+  });
 }
 
 if (hamburger && navLinks && navOverlay) {
@@ -38,12 +65,26 @@ if (hamburger && navLinks && navOverlay) {
 
   navOverlay.addEventListener('click', closeMenu);
 
-  navLinks.querySelectorAll('a').forEach(link => {
+  navLinks.querySelectorAll('a:not(.dropbtn)').forEach(link => {
     link.addEventListener('click', () => {
       closeMenu();
     });
   });
 }
+
+
+// ---- Fix: Prevent default for all screen sizes ----
+const allDropdownBtns = document.querySelectorAll('.dropdown .dropbtn');
+allDropdownBtns.forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault(); // Her zaman defaultu engelle
+    if (window.innerWidth <= 768) {
+      e.stopPropagation();
+      const dropdown = btn.closest('.dropdown');
+      dropdown.classList.toggle('open');
+    }
+  });
+})
 
 
 // ---- Counter animation ----

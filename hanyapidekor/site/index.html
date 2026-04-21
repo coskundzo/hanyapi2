@@ -410,23 +410,23 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name">Ad Soyad *</label>
-            <input type="text" id="name" name="name" placeholder="Adınızı girin" required />
+            <input type="text" id="name" name="name" placeholder="Adınızı girin" autocomplete="name" required />
             <span class="form-error" id="nameError"></span>
           </div>
           <div class="form-group">
             <label for="phone">Telefon *</label>
-            <input type="tel" id="phone" name="phone" placeholder="05xx xxx xx xx" required />
+            <input type="tel" id="phone" name="phone" placeholder="05xx xxx xx xx" autocomplete="tel" required />
             <span class="form-error" id="phoneError"></span>
           </div>
         </div>
         <div class="form-group">
           <label for="email">E-Posta</label>
-          <input type="email" id="email" name="email" placeholder="ornek@email.com" />
+          <input type="email" id="email" name="email" placeholder="ornek@email.com" autocomplete="email" />
           <span class="form-error" id="emailError"></span>
         </div>
         <div class="form-group">
           <label for="service">Hizmet Türü</label>
-          <select id="service" name="service">
+          <select id="service" name="service" autocomplete="off">
             <option value="">Seçiniz...</option>
             <option>Boya & Badana</option>
             <option>Fayans & Seramik</option>

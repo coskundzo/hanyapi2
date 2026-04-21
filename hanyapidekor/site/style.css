@@ -909,21 +909,6 @@ ul { list-style: none; }
   .stats .container { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* DROPDOWN MOBİL FIX */
-.dropdown-menu {
-  position: static;
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  background: transparent;
-  box-shadow: none;
-  padding-left: 12px;
-}
-
-.dropdown-menu a {
-  padding: 10px 0;
-}
-
 /* =========================
    DROPDOWN MENU
    ========================= */
@@ -998,5 +983,83 @@ ul { list-style: none; }
 
 .fixed-nav {
   padding-top: 70px;
+}
+
+/* =========================
+   MOBİL DROPDOWN - TIKLA AÇ
+   ========================= */
+@media (max-width: 768px) {
+  /* Dropdown li border kaldır ve padding ekle */
+  #navLinks li.dropdown {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Dropdown buton */
+  #navLinks .dropdown > .dropbtn {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Dropdown menü - KAPALI */
+  #navLinks .dropdown > .dropdown-menu {
+    position: static !important;
+    display: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 8px 0 0 0 !important;
+    border-top: 1px solid rgba(255,255,255,.08);
+    min-width: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Dropdown menü - AÇIK */
+  #navLinks .dropdown.open > .dropdown-menu {
+    display: block !important;
+  }
+
+  /* Dropdown içindeki li'ler */
+  #navLinks .dropdown-menu > li {
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255,255,255,.05) !important;
+    padding-left: 20px !important;
+    margin: 0 !important;
+  }
+
+  #navLinks .dropdown-menu > li:last-child {
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  }
+
+  /* Dropdown içindeki linkler */
+  #navLinks .dropdown-menu a {
+    display: block !important;
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+    color: rgba(255,255,255,.7) !important;
+  }
+
+  #navLinks .dropdown-menu a:hover {
+    color: var(--gold) !important;
+  }
+
+  /* Mobilde hover'ı tamamen kapat */
+  #navLinks .dropdown:hover > .dropdown-menu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Açık durumda hover olsa bile görünsün */
+  #navLinks .dropdown.open:hover > .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
   
