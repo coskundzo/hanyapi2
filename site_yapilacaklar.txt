@@ -1,0 +1,9 @@
+1 - youtube hesap,instagram hesap,facebook hesap,linkedin hesap,tiktok hesap
+
+2 - projeler kendi resimlerini ekle
+
+3 - drowdown menü mobilde bozuk
+
+4 - sayfa icon düzeltilecek
+
+5 - domain değişcek
